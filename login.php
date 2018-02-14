@@ -34,10 +34,12 @@
   <form class="form" action="" method="POST">
     <input class="textfield" type="text" name="username" placeholder="username" required> <br> <br>
     <input class="textfield" type="password" name="password" placeholder="password" required> <br> <br> <br>
-    <input type="submit" class="button1" value="login">
+    <input type="submit" class="button1" value="Login">
   </form>
 
-  <a href="register.php">Create account</a>
+  <br> <br>
+
+  <input class="button1" type="button" value="Create account" onclick="window.location.href='register.php'">
 
 
 </body>

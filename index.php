@@ -22,16 +22,9 @@
         onclick="window.location.href='all.php'">
  </div>
 
- <?php
+ <br> <br>
 
- /*$username=$_POST["username"];
- $password=$_POST["password"];
- $sql="INSERT INTO inloggen(username, password)
- VALUES ('$username','$password')";
- $result= mysqli_query($connection,$sql);*/
-
-  ?>
-  <a href="logout.php">Log out</a>
+  <input class="button1" type="button" value="Log out" onclick="window.location.href='logout.php'">
 
 
 </body>
