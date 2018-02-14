@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include("database.php") ?>
 <head>
 <title></title>
 <link rel="stylesheet" href="blog.css">

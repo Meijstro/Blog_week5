@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include("database.php") ?>
 <head>
 <title></title>
 <link rel="stylesheet" href="blog.css">
@@ -10,11 +11,28 @@
 <body>
 
   <?php
-    if(isset($_POST['register'])){
+  $error = "";
+  if(isset($_POST['register'])){
       $add_username = mysqli_real_escape_string($connection, $_POST['username']);
       $add_password = mysqli_real_escape_string($connection, $_POST['password']);
       $sql = "SELECT * FROM users WHERE username = '$add_username';";
       $result = mysqli_query($connection, $sql);
+      if($result->num_rows < 1){
+          
+          $sql = "INSERT INTO users (username, password)
+                      VALUES ('$add_username','$add_password');";
+          $result = mysqli_query($connection, $sql);
+          if($result!=1)
+          {
+              echo "Er is iets fout gegaan, probeer opnieuw!";
+          }
+          else{
+              echo "U heeft succesvol een nieuw user account aagemaakt!";
+          }
+      }else{
+          echo "De username die je gekozen hebt bestaat al.";
+      }
+  }
   ?>
 
   <div class="categorieen">

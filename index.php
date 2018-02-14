@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include("database.php") ?>
 <head>
 <title></title>
 <link rel="stylesheet" href="blog.css">
@@ -7,12 +8,9 @@
 </head>
 <body>
 
-  <?php
-      session_start();
-      if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-            header("Location: login.php");
-      }
-   ?>
+<?php
+    if(isset($_SESSION['current_user_id'])) {}
+?>
 
   <div id="wie">
   <input type="button" class="button1" value="Ik ben een blogger"
@@ -25,7 +23,6 @@
  <br> <br>
 
   <input class="button1" type="button" value="Log out" onclick="window.location.href='logout.php'">
-
 
 </body>
 </html>
