@@ -8,7 +8,12 @@
 </head>
 <body>
 
-  <div class="categorieen">
+<div class="logout_section">
+  <input class="button" type="button" value="Go back" onclick="window.location.href='index.php'">
+  <input class="button" type="button" value="Log out" onclick="window.location.href='logout.php'">
+</div>
+
+<div class="categorieen2">
     <h2 class="header2">Zoek op categorie</h2>
   <ul class="ul">
     <li><button id="allbtn">All</button></li>
@@ -16,6 +21,7 @@
     <li><button id="cryptobtn">Cryptovaluta</button></li>
     <li><button id="trumpbtn">Trump</button></li>
   </ul>
+</div>
   <br>
 <div class=articleform>
   <form class="form" action="" method="POST">
@@ -98,7 +104,6 @@ echo "<div class='category_".$row['categorie']."'><br>"."<b>".$row["user"]."</b>
 
 
     ?>
-  </div>
   </div>
 
 </body>

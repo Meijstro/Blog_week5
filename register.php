@@ -25,13 +25,13 @@
           $result = mysqli_query($connection, $sql);
           if($result!=1)
           {
-              echo "Er is iets fout gegaan, probeer opnieuw!";
+              echo "Something went wrong, try again!";
           }
           else{
-              echo "U heeft succesvol een nieuw user account aagemaakt!";
+              echo "You succesfully created an account!";
           }
       }else{
-          echo "De username die je gekozen hebt bestaat al.";
+          echo "This username already exists, try another!";
       }
   }
   ?>
@@ -44,6 +44,10 @@
     <input class="textfield" type="password" name="password" placeholder="password" required> <br> <br> <br>
     <input type="submit" class="button1" name="register" value="Create account">
   </form>
+
+  <br> <br>
+
+  <input type="button" class="button1" value="Go back" onclick="window.location.href='login.php'">
 
 
 </body>

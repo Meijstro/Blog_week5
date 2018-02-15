@@ -36,9 +36,12 @@ window.onload = function () {
 </script>
 </head>
 <body>
+
+  <br>
+  <input class="button1" type="button" value="Go back" onclick="window.location.href='index.php'">
   <div class="categorieen">
 
-    <br> <br>
+    <br>
     <form class="form" action="blog.php" method="POST">
       <h2 class="header2"> Categorie </h2>
         <select class="dropdown" name="categorie" onchange="">

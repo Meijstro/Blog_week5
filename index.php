@@ -10,7 +10,8 @@
 
 <?php
     if(isset($_SESSION['current_user_id'])) {}
-?>
+      ?>
+
 
   <div id="wie">
   <input type="button" class="button1" value="Ik ben een blogger"
@@ -23,6 +24,8 @@
  <br> <br>
 
   <input class="button1" type="button" value="Log out" onclick="window.location.href='logout.php'">
+
+
 
 </body>
 </html>
