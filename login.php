@@ -17,17 +17,22 @@ if(isset($_POST['login'])) {
 
     $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($connection, $sql);
-    if($result == true)
+
+    if(mysqli_num_rows($result) != 0)
     {
-        session_start();
-        $sql = "SELECT * FROM users WHERE username = '$username'";
-        $result = mysqli_query($connection, $sql);
-        $subjects = mysqli_fetch_assoc($result);
-        $_SESSION['current_user_id'] = $subjects['id'];
-        header("Location: index.php");
+      session_start();
+      $sql = "SELECT * FROM users WHERE username = '$username'";
+      $result = mysqli_query($connection, $sql);
+      $subjects = mysqli_fetch_assoc($result);
+      $_SESSION['current_user_id'] = $subjects['id'];
+       header("Location: index.php");
+
+
     }
     else {
-        echo "Invalid username or password!";
+      echo "Invalid username or password!";
+        $_SESSION['current_user_id'] =  '';
+
     }
 }
 ?>
