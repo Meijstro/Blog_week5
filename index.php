@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <?php include("database.php") ?>
 <head>
 <title></title>
@@ -8,8 +9,8 @@
 </head>
 <body>
 
-<?php
-    if(isset($_SESSION['current_user_id'])) {}
+  <?php
+  if(isset($_SESSION['current_user_id'])){
       ?>
 
 
@@ -24,8 +25,8 @@
  <br> <br>
 
   <input class="button1" type="button" value="Log out" onclick="window.location.href='logout.php'">
-
-
-
-</body>
-</html>
+<?php } else{
+  echo "failed to log in";
+  header("Location: login.php");
+}
+?>

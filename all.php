@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <?php include("database.php") ?>
 <head>
 <title></title>
@@ -7,6 +8,9 @@
 <script src="filter.js"></script>
 </head>
 <body>
+  <?php
+  if(isset($_SESSION['current_user_id'])){
+      ?>
 
 <div class="logout_section">
   <input class="button" type="button" value="Go back" onclick="window.location.href='index.php'">
@@ -105,6 +109,11 @@ echo "<div class='category_".$row['categorie']."'><br>"."<b>".$row["user"]."</b>
 
     ?>
   </div>
+<?php } else{
+  echo "failed to log in";
+  header("Location: login.php");
+}
+?>
 
 </body>
 </html>

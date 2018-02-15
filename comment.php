@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <?php include("database.php") ?>
 <head>
 <title></title>
@@ -6,6 +7,9 @@
 <script src= "jquery-3.3.1.min.js"></script>
 </head>
 <body>
+  <?php
+  if(isset($_SESSION['current_user_id'])){
+      ?>
 <div class="categorieen">
   <ul class="ul">
     <li><a href="all.php">Go back</a></li>
@@ -51,6 +55,12 @@
       $result = mysqli_query($connection,$sql);
   }
   ?>
+
+<?php } else{
+  echo "failed to log in";
+  header("Location: login.php");
+}
+?>
 
 
 </body>

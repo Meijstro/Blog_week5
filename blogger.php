@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <?php include("database.php") ?>
 <head>
 <title></title>
 <link rel="stylesheet" href="blog.css">
 <script src= "jquery-3.3.1.min.js"></script>
+
 <script>
 shortcuts = {
     "cg": "CodeGorilla",
@@ -36,6 +38,9 @@ window.onload = function () {
 </script>
 </head>
 <body>
+  <?php
+  if(isset($_SESSION['current_user_id'])){
+      ?>
 
   <br>
   <input class="button1" type="button" value="Go back" onclick="window.location.href='index.php'">
@@ -56,7 +61,11 @@ window.onload = function () {
         <input class="button" type="submit" value="Verzenden"/>
       </form>
     </div>
-
+  <?php } else{
+    echo "failed to log in";
+    header("Location: login.php");
+  }
+  ?>
 
 </body>
 </html>
