@@ -17,10 +17,11 @@
       $add_password = mysqli_real_escape_string($connection, $_POST['password']);
       $sql = "SELECT * FROM users WHERE username = '$add_username';";
       $result = mysqli_query($connection, $sql);
+      $encrypt_password=md5($add_password);
       if($result->num_rows < 1){
-          
+
           $sql = "INSERT INTO users (username, password)
-                      VALUES ('$add_username','$add_password');";
+                      VALUES ('$add_username','$encrypt_password');";
           $result = mysqli_query($connection, $sql);
           if($result!=1)
           {

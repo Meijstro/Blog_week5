@@ -13,7 +13,7 @@
   <?php
 if(isset($_POST['login'])) {
     $username = mysqli_real_escape_string($connection, $_POST['username']);
-    $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $password = md5(mysqli_real_escape_string($connection, $_POST['password']));
 
     $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($connection, $sql);
