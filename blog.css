@@ -51,6 +51,18 @@ body{
   margin-left: 40%;
   margin-right: 40%;
 }
+.button1:hover{
+  background-color: #d54d7b;
+  color: white;
+}
+.button:hover{
+  background-color: #d54d7b;
+  color: white;
+}
+button:hover{
+  background-color: #d54d7b;
+  color: white;
+}
 
 .logout_section{
   float:right;
