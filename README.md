@@ -2,4 +2,4 @@
 
 Live demo:
 
-http://www.sjoerd.niks.tv/login.php
+http://www.sjoerd.niks.tv
